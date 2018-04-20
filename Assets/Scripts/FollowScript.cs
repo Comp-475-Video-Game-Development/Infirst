@@ -35,7 +35,7 @@ public class FollowScript : MonoBehaviour {
 
             //Move tward player
             //transform.LookAt(player.transform);
-            transform.Translate(Vector3.forward * Time.deltaTime);
+            transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
         }
     }
 }
