@@ -7,6 +7,7 @@ public class FollowScript : MonoBehaviour {
     private Transform enemyTransform;
     public GameObject player;
     public int maxDistance;
+    public int minDistance;
     public int moveSpeed;
     public int rotationSpeed;
     
@@ -22,14 +23,18 @@ public class FollowScript : MonoBehaviour {
         Debug.DrawLine(player.transform.position, enemyTransform.position, Color.yellow);
 
         
-        if(Vector3.Distance(player.transform.position, enemyTransform.position) < maxDistance)
+        if(Vector3.Distance(player.transform.position, enemyTransform.position) < maxDistance && Vector3.Distance(player.transform.position, enemyTransform.position) > minDistance)
         {
             //Look at player
-            enemyTransform.rotation = Quaternion.Slerp(enemyTransform.rotation,
+            Quaternion enemyRotation = Quaternion.Slerp(enemyTransform.rotation,
             Quaternion.LookRotation(player.transform.position - enemyTransform.position), rotationSpeed * Time.deltaTime);
+            enemyRotation.x = 0;
+            enemyRotation.z = 0;
+            enemyTransform.rotation = (enemyRotation);
+
 
             //Move tward player
-            transform.LookAt(player.transform);
+            //transform.LookAt(player.transform);
             transform.Translate(Vector3.forward * Time.deltaTime);
         }
     }
