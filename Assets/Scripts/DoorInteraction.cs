@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorInteraction : MonoBehaviour
 {
@@ -15,10 +16,11 @@ public class DoorInteraction : MonoBehaviour
         // Only open door if:
         // door is closed,
         // player is within door's collider, and
-        // the player has picked up the corresponding key
+        // the player has picked up the door's corresponding key
         if (Input.GetKeyDown(KeyCode.F) && !isDoorOpen && inProximity && Key == null)
         {
             DoorText.SetActive(false);
+            DoorText.GetComponent<Text>().text = "It's locked... I need to find a key";
             isDoorOpen = true;
             Destroy(Door.GetComponent<BoxCollider>());
             InvokeRepeating("OpenDoor", 0f, .001f);

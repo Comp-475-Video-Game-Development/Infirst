@@ -25,6 +25,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 462124}
+  - component: {fileID: 135984736219064448}
+  - component: {fileID: 114625746495754342}
   m_Layer: 0
   m_Name: key_gold
   m_TagString: Untagged
@@ -51,14 +53,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170560}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.41857466, y: -0.56876296, z: -0.41937235, w: 0.5704655}
+  m_LocalPosition: {x: -0.100112915, y: 0.7533612, z: -0.07399988}
+  m_LocalScale: {x: 0.0100000035, y: 0.010000001, z: 0.0100000035}
   m_Children:
   - {fileID: 431008}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -72.671005, y: -89.498, z: -0.44900003}
 --- !u!23 &2314182
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -111,3 +113,29 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170560}
   m_IsPrefabParent: 1
+--- !u!114 &114625746495754342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0012fded446621649bc6c33bd3b5fa22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DoorText: {fileID: 0}
+  KeyText: {fileID: 0}
+  KeyPrefab: {fileID: 0}
+--- !u!135 &135984736219064448
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 51.216026
+  m_Center: {x: -27.601433, y: 11.338729, z: -2.9027166}
