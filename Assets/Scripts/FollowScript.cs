@@ -6,8 +6,9 @@ public class FollowScript : MonoBehaviour {
 
     private Transform enemyTransform;
     public GameObject player;
+  
     public int maxDistance;
-    public int minDistance;
+    public float minDistance;
     public int moveSpeed;
     public int rotationSpeed;
     
@@ -15,6 +16,12 @@ public class FollowScript : MonoBehaviour {
     private void Awake()
     {
         enemyTransform = transform;
+    }
+
+    private void Start()
+    {
+        
+        GetComponent<Animation>().Play();
     }
 
 
