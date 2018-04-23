@@ -20,7 +20,6 @@ public class DoorInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && !isDoorOpen && inProximity && Key == null)
         {
             DoorText.SetActive(false);
-            DoorText.GetComponent<Text>().text = "It's locked... I need to find a key";
             isDoorOpen = true;
             Destroy(Door.GetComponent<BoxCollider>());
             InvokeRepeating("OpenDoor", 0f, .001f);
