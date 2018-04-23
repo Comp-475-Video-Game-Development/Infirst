@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 469694}
   - component: {fileID: 135282432664411610}
   - component: {fileID: 114313183810827652}
+  - component: {fileID: 122210792274022340}
   m_Layer: 0
   m_Name: key_silver
   m_TagString: Key
@@ -54,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155280}
   m_LocalRotation: {x: -0.41857466, y: -0.56876296, z: -0.41937235, w: 0.5704655}
-  m_LocalPosition: {x: -0.100112915, y: 0.7533612, z: -0.07399988}
+  m_LocalPosition: {x: 29.3793, y: 4.6045, z: 3.7386}
   m_LocalScale: {x: 0.0100000035, y: 0.010000001, z: 0.0100000035}
   m_Children:
   - {fileID: 413480}
@@ -127,6 +128,17 @@ MonoBehaviour:
   DoorText: {fileID: 0}
   KeyText: {fileID: 0}
   KeyPrefab: {fileID: 155280}
+--- !u!122 &122210792274022340
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155280}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278210382
+  m_Size: 0.05
 --- !u!135 &135282432664411610
 SphereCollider:
   m_ObjectHideFlags: 1
