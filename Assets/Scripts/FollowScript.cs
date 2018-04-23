@@ -11,6 +11,7 @@ public class FollowScript : MonoBehaviour {
     public float minDistance;
     public int moveSpeed;
     public int rotationSpeed;
+    public static bool follow = false;
     
 
     private void Awake()
@@ -29,20 +30,22 @@ public class FollowScript : MonoBehaviour {
     {
         Debug.DrawLine(player.transform.position, enemyTransform.position, Color.yellow);
 
-        
-        if(Vector3.Distance(player.transform.position, enemyTransform.position) < maxDistance && Vector3.Distance(player.transform.position, enemyTransform.position) > minDistance)
+        if (follow)
         {
-            //Look at player
-            Quaternion enemyRotation = Quaternion.Slerp(enemyTransform.rotation,
-            Quaternion.LookRotation(player.transform.position - enemyTransform.position), rotationSpeed * Time.deltaTime);
-            enemyRotation.x = 0;
-            enemyRotation.z = 0;
-            enemyTransform.rotation = (enemyRotation);
+            if (Vector3.Distance(player.transform.position, enemyTransform.position) < maxDistance && Vector3.Distance(player.transform.position, enemyTransform.position) > minDistance)
+            {
+                //Look at player
+                Quaternion enemyRotation = Quaternion.Slerp(enemyTransform.rotation,
+                Quaternion.LookRotation(player.transform.position - enemyTransform.position), rotationSpeed * Time.deltaTime);
+                enemyRotation.x = 0;
+                enemyRotation.z = 0;
+                enemyTransform.rotation = (enemyRotation);
 
 
-            //Move tward player
-            //transform.LookAt(player.transform);
-            transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+                //Move tward player
+                //transform.LookAt(player.transform);
+                transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+            }
         }
     }
 }

@@ -53,5 +53,9 @@ public class DoorInteraction : MonoBehaviour
     private void StopDoor()
     {
         CancelInvoke("OpenDoor");
+        if (Door.tag == "ZombieDoor")
+        {
+            FollowScript.follow = true;
+        }
     }
 }
