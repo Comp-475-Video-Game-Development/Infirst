@@ -42,6 +42,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        GameOverPanel.SetActive(false);
         PausePanel.SetActive(false);
         PlayerController.GetComponent<FirstPersonController>().enabled = true;
         Time.timeScale = 1;
