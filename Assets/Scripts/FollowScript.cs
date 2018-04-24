@@ -12,9 +12,17 @@ public class FollowScript : MonoBehaviour {
     public int moveSpeed;
     public int rotationSpeed;
     public static bool follow = false;
+    public static bool IsAttacking
+    {
+        get
+        {
+            return isAttacking;
+        }
+    }
+
     private bool isWalking = false;
     private bool isMoving = false;
-    private bool isAttacking = false;
+    private static bool isAttacking = false;
 
     private void Start()
     {
