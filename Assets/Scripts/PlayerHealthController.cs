@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    public bool isAttacking;
+    private bool isAttacking;
 
     private int maxHealth = 4;
     private int minHealth = 0;
@@ -17,11 +17,13 @@ public class PlayerHealthController : MonoBehaviour
         if (isAttacking)
         {
             --currentHealth;
+            Debug.Log("lost 1 health");
         }
 
         if (currentHealth == minHealth)
         {
             // Player dead. Show game over.
+            Debug.Log("You dead");
         }
     }
 }
