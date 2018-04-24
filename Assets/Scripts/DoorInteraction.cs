@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class DoorInteraction : MonoBehaviour
 {
     public GameObject DoorText;
     public GameObject Door;
     public GameObject Key;
+    public GameObject PlayerController;
     bool isDoorOpen = false;
     bool inProximity = false;
+    public static bool isGameOver = false;
 
     private void Update()
     {
@@ -21,9 +24,21 @@ public class DoorInteraction : MonoBehaviour
         {
             DoorText.SetActive(false);
             isDoorOpen = true;
-            Destroy(Door.GetComponent<BoxCollider>());
-            InvokeRepeating("OpenDoor", 0f, .001f);
-            Invoke("StopDoor", 0.5f);
+
+            if (Door.tag != "ExitDoor")
+            {
+                Destroy(Door.GetComponent<BoxCollider>());
+                InvokeRepeating("OpenDoor", 0f, .001f);
+                Invoke("StopDoor", 0.5f);
+            }
+            else
+            {
+                isGameOver = true;
+                PlayerController.GetComponent<FirstPersonController>().enabled = false;
+                Time.timeScale = 0;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
     }
 
@@ -57,5 +72,6 @@ public class DoorInteraction : MonoBehaviour
         {
             FollowScript.follow = true;
         }
+        Destroy(this.GetComponent<DoorInteraction>());
     }
 }

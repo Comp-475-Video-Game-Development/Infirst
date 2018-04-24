@@ -7,8 +7,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PausePanel;
+    public GameObject GameOverPanel;
     public GameObject PlayerController;
-    private bool m_cursorIsLocked = true;
 
     private void Start()
     {
@@ -17,7 +17,12 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (DoorInteraction.isGameOver)
+        {
+            GameOverPanel.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !DoorInteraction.isGameOver)
         {
             if (!PausePanel.activeInHierarchy)
             {
