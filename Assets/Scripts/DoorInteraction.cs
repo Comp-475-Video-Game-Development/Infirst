@@ -13,6 +13,12 @@ public class DoorInteraction : MonoBehaviour
     bool isDoorOpen = false;
     bool inProximity = false;
     public static bool isGameOver = false;
+    private GameObject blocker;
+
+    private void Start()
+    {
+        blocker = GameObject.Find("Blocker");
+    }
 
     private void Update()
     {
@@ -38,6 +44,12 @@ public class DoorInteraction : MonoBehaviour
                 Time.timeScale = 0;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+            }
+
+            if(tag == "ZombieDoor")
+            {
+                blocker.SetActive(false);
+                AnimationScript.follow = true;
             }
         }
     }

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowScript : MonoBehaviour {
+public class AnimationScript : MonoBehaviour
+{
 
     private Transform enemyTransform;
     public GameObject player;
@@ -68,7 +69,7 @@ public class FollowScript : MonoBehaviour {
             {
                 isMoving = false;
 
-                if(isWalking)
+                if (isWalking)
                 {
                     isWalking = false;
                     isAttacking = false;
@@ -76,8 +77,6 @@ public class FollowScript : MonoBehaviour {
                 }
 
             }
-
-            
         }
     }
 }
