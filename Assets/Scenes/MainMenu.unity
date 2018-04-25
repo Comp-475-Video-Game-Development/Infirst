@@ -643,6 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConfirmQuitPanel: {fileID: 2081461136}
+  LoadingPanel: {fileID: 1418667332}
 --- !u!1 &415407719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,7 +1615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1418667333
 RectTransform:
   m_ObjectHideFlags: 0
