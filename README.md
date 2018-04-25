@@ -8,15 +8,25 @@ Asylum https://assetstore.unity.com/packages/3d/environments/urban/abandoned-asy
 
 Zombie AI 
 
+
 Nick:
+
 Zombie AI and Node placement
+
 Making the asylum presentable and light tweaking
+
 Assist with menus
 
+
 Nathan:
+
 Key placement and door interaction
+
 GUI/menus
+
 Assist with asylum presentable-ness
 
+
 Both:
+
 Zombie animation
