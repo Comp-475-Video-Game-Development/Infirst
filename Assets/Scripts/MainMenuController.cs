@@ -6,11 +6,14 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     public GameObject ConfirmQuitPanel;
+    public GameObject LoadingPanel;
 
     public void LoadAsylum()
     {
         Debug.Log("Loading Asylum");
-        SceneManager.LoadScene("Asylum");
+        LoadingPanel.SetActive(true);
+        StartCoroutine(LoadAsylumScene());
+        //SceneManager.LoadScene("Asylum");
     }
 
     public void ExitToDesktop()
@@ -26,5 +29,15 @@ public class MainMenuController : MonoBehaviour
     public void DenyQuit()
     {
         ConfirmQuitPanel.SetActive(false);
+    }
+
+    private IEnumerator LoadAsylumScene()
+    {
+        AsyncOperation async = SceneManager.LoadSceneAsync("Asylum");
+
+        while (!async.isDone)
+        {
+            yield return null;
+        }
     }
 }
